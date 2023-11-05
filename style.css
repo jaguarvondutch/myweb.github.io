@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: url('img.avif.avif') no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    max-width: 650px;
+    width: 80%;
+    padding: 40px 30px;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    perspective: 2700px;
+}
+
+.container .cover {
+    position: absolute;
+    height: 30px;
+    left: 50%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    transition: all 2s ease;
+    transform-style: preserve-3d;
+    transform-origin: left;
+}
+
+.container .cover .back {
+    backface-visibility: hidden;
+}
+
+.container .cover::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #f0e;
+    opacity: 0.2;
+    z-index: 100;
+}
+
+.container #flip:checked ~ .cover {
+    transform: rotateY(-180deg);
+}
+
+.container .cover img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    object-fit: cover;
+}
+
+.container .cover .text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.cover .text .text-1,
+.cover .text .text-2 {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    backface-visibility: hidden;
+}
+
+.container .cover .text-2 {
+    font-weight: 300;
+}
+
+.container h2 {
+   color: rgb(0, 0, 0);
+   padding-left: 60px;
+   font-size: 32px;
+}
+
+.container .form-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form .form-content .input-boxes {
+    margin-top: 20px;
+}
+
+form .form-content .input-box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+form .form-content .input-box:focus,
+form .form-content .input-box:valid {
+    border-color: rgb(152, 8, 142);
+}
+
+form .form-content .input-box:hover {
+    border-color: rgb(152, 8, 142);
+}
+
+.form-content .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    transition: all .3s ease;
+}
+
+.form-content .input-box i {
+    position: absolute;
+    color: rgb(221, 3, 206);
+    font-size: 17px;
+}
+
+form .form-content .text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4d4848;
+}
+
+form .form-content .text label {
+    color: rgb(205, 0, 191);
+    font-weight: 600;
+}
+
+form .form-content .text label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+form .form-content .text a {
+    text-decoration: none;
+    color: rgb(189, 4, 177);
+}
+
+form .form-content .text a:hover {
+    text-decoration: underline;
+}
+
+form .form-content .button input {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(#f0e, #f0e, #333, #f0e, #f0e);
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+form .form-content .button {
+    margin-top: 40px;
+}
+
+form .form-content .button input:hover {
+    background: linear-gradient(rgb(124, 2, 116), #f0e, #333, #f0e, rgb(124, 2, 116));
+}
+
